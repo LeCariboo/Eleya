@@ -150,9 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94068d42c78ed345a05c4fa1b1fda7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warriorPrefab: {fileID: 7071930136490544899, guid: c89a9021716cdfa478445c84f4620889,
+  warriorPrefabBack: {fileID: 7071930136490544899, guid: c89a9021716cdfa478445c84f4620889,
     type: 3}
-  wizardPrefab: {fileID: 7831100221916845869, guid: ca3fa017339299f40bc1f6fe91f6099e,
+  warriorPrefabFace: {fileID: 2999343246372248324, guid: 200a5c32dc521e246aa41579d55f789b,
+    type: 3}
+  wizardPrefabBack: {fileID: 7831100221916845869, guid: ca3fa017339299f40bc1f6fe91f6099e,
+    type: 3}
+  wizardPrefabFace: {fileID: 4631540393240637498, guid: 3f1b0ec6a9963bd4187c46c0b2d89342,
     type: 3}
   selection: 
 --- !u!4 &859937272

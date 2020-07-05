@@ -23,8 +23,11 @@ public class ScreenSelection : MonoBehaviour
     }
     #endregion
 
-    public Transform warriorPrefab;
-    public Transform wizardPrefab;
+    public Transform warriorPrefabBack;
+    public Transform warriorPrefabFace;
+    public Transform wizardPrefabBack;
+    public Transform wizardPrefabFace;
+
 
 
     public void generateCharacter()
@@ -37,17 +40,20 @@ public class ScreenSelection : MonoBehaviour
             {
                 if (o == 1)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefab"), new Vector3(5.5f, 0.25f, 1), Quaternion.identity);
+                    Instantiate(warriorPrefabBack, new Vector3(5.5f, 0.25f, 1), Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-7f, 1.5f, 1), Quaternion.identity);
                     o++;
                 }
                 else if (o == 2)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefab"), new Vector3(6.5f, 0.75f, 1), Quaternion.identity);
+                    Instantiate(warriorPrefabBack, new Vector3(6.5f, 0.75f, 1), Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-6, 2, 1), Quaternion.identity);
                     o++;
                 }
                 else if (o == 3)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefab"), new Vector3(7.5f, 1.25f, 1), Quaternion.identity);
+                    Instantiate(warriorPrefabBack, new Vector3(7.5f, 1.25f, 1), Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-5f, 2.5f, 1), Quaternion.identity);
                     o++;
                 }
 
@@ -56,18 +62,20 @@ public class ScreenSelection : MonoBehaviour
             {
                 if (o == 1)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefab"), new Vector3(5.5f, 0.25f, 1), Quaternion.identity);
+                    Instantiate(wizardPrefabBack, new Vector3(5.5f, 0.25f, 1), Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabFace"), new Vector3(-7f, 1.5f, 1), Quaternion.identity);
                     o++;
                 }
                 else if (o == 2)
                 {
-
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefab"), new Vector3(6.5f, 0.75f, 1), Quaternion.identity);
+                    Instantiate(wizardPrefabBack, new Vector3(6.5f, 0.75f, 1), Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabFace"), new Vector3(-6, 2, 1), Quaternion.identity);
                     o++;
                 }
                 else if (o == 3)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefab"), new Vector3(7.5f, 1.25f, 1), Quaternion.identity);
+                    Instantiate(wizardPrefabBack, new Vector3(7.5f, 1.25f, 1), Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabFace"), new Vector3(-5f, 2.5f, 1), Quaternion.identity);
                     o++;
                 }
             }
