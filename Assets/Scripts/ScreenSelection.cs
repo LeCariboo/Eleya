@@ -44,6 +44,7 @@ public class ScreenSelection : MonoBehaviour
         int o = 1;
         foreach (int selected in selection)
         {
+<<<<<<< Updated upstream
 
             if (selected == 0)
             {
@@ -62,6 +63,13 @@ public class ScreenSelection : MonoBehaviour
                     PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-5f, 2.5f, 1), Quaternion.identity);
                     o++;
                 }
+=======
+            Debug.Log("Liste envoyer");
+        }
+        
+        Debug.Log("Liste reçu"); 
+    }
+>>>>>>> Stashed changes
 
             }
             else if (selected == 1)
