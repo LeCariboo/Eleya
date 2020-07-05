@@ -8,6 +8,18 @@ TextureImporter:
   - first:
       213: 5696770936715017764
     second: wizard_icon
+  - first:
+      213: -2045241179596208353
+    second: warrior_face
+  - first:
+      213: 7632504960321735611
+    second: warrior_back
+  - first:
+      213: -4958638880730582307
+    second: wizard_face
+  - first:
+      213: -207807116604466329
+    second: wizard_back
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -121,7 +133,7 @@ TextureImporter:
         width: 64
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,6 +141,90 @@ TextureImporter:
       bones: []
       spriteID: 42efaa1fbfefe0f40800000000000000
       internalID: 5696770936715017764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior_face
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 230
+        width: 36
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17ca2abbf7dd93e0800000000000000
+      internalID: -2045241179596208353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warrior_back
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 144
+        width: 36
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb426a92da1ce960800000000000000
+      internalID: 7632504960321735611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wizard_face
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 230
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2fc90c5306f2bb0800000000000000
+      internalID: -4958638880730582307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wizard_back
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 144
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b1ef84788bd1df0800000000000000
+      internalID: -207807116604466329
       vertices: []
       indices: 
       edges: []
