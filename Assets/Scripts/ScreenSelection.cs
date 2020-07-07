@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using System.IO;
 using Photon.Pun;
 
-public class ScreenSelection : MonoBehaviour
+public class ScreenSelection : MonoBehaviourPun
 {
     #region Singleton 
     //on crée une unique instance accessible de partout
@@ -32,17 +32,17 @@ public class ScreenSelection : MonoBehaviour
     [PunRPC]
     public void sendList()
     {
-        generateEnnemyCharacter();
         generateAllyCharacter();
-        Debug.Log("Liste reçu");
+        generateEnnemyCharacter();
         loadScene();
     }
 
 
     public void generateEnnemyCharacter()
     {
+
         int o = 1;
-        foreach (int selected in selection)
+        foreach (int selected in EnnemySelection)
         {
 <<<<<<< Updated upstream
 
@@ -50,8 +50,8 @@ public class ScreenSelection : MonoBehaviour
             {
                 if (o == 1)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-7f, 1.5f, 1), Quaternion.identity);
-                    o++;
+                   PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-7f, 1.5f, 1), Quaternion.identity);
+                   o++;
                 }
                 else if (o == 2)
                 {
@@ -96,7 +96,7 @@ public class ScreenSelection : MonoBehaviour
     public void generateAllyCharacter()
     {
         int o = 1;
-        foreach (int selected in selection)
+        foreach (int selected in AllySelection)
         {
 
             if (selected == 0)
@@ -140,12 +140,12 @@ public class ScreenSelection : MonoBehaviour
     }
 
 
-
-    public List<int> selection = new List<int>();
-    int i = 1;
+    public List<int> AllySelection = new List<int>();
+    public List<int> EnnemySelection = new List<int>();
     public void selectCharacter(int id)
     {
-        selection.Add(id);       
+        AllySelection.Add(id);
+        EnnemySelection.Add(id);
     }
 
     public void loadScene()
