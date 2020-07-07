@@ -287,7 +287,10 @@ MonoBehaviour:
     type: 3}
   wizardPrefabFace: {fileID: 4631540393240637498, guid: 3f1b0ec6a9963bd4187c46c0b2d89342,
     type: 3}
-  selection: 
+  warriorAlly: {fileID: 6034829128653040061, guid: c89a9021716cdfa478445c84f4620889,
+    type: 3}
+  AllySelection: 
+  EnnemySelection: 
 --- !u!4 &859937272
 Transform:
   m_ObjectHideFlags: 0

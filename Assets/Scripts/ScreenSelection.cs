@@ -28,8 +28,8 @@ public class ScreenSelection : MonoBehaviourPun
     public Transform wizardPrefabBack;
     public Transform wizardPrefabFace;
 
+    public PhotonView PV;
 
-    [PunRPC]
     public void sendList()
     {
         generateAllyCharacter();
@@ -44,49 +44,72 @@ public class ScreenSelection : MonoBehaviourPun
         int o = 1;
         foreach (int selected in EnnemySelection)
         {
-<<<<<<< Updated upstream
 
             if (selected == 0)
             {
                 if (o == 1)
                 {
-                   PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-7f, 1.5f, 1), Quaternion.identity);
-                   o++;
+                   GameObject warriorEnnemy = PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-7f, 1.5f, 1), Quaternion.identity);
+                    PV = warriorEnnemy.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        warriorEnnemy.SetActive(false);
+                    }
+
+                    o++;
                 }
                 else if (o == 2)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-6, 2, 1), Quaternion.identity);
+                    GameObject warriorEnnemy = PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-6, 2, 1), Quaternion.identity);
+                    PV = warriorEnnemy.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        warriorEnnemy.SetActive(false);
+                    }
                     o++;
                 }
                 else if (o == 3)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-5f, 2.5f, 1), Quaternion.identity);
+                    GameObject warriorEnnemy = PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabFace"), new Vector3(-5f, 2.5f, 1), Quaternion.identity);
+                    PV = warriorEnnemy.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        warriorEnnemy.SetActive(false);
+                    }
                     o++;
                 }
-=======
-            Debug.Log("Liste envoyer");
-        }
-        
-        Debug.Log("Liste reçu"); 
-    }
->>>>>>> Stashed changes
 
             }
             else if (selected == 1)
             {
                 if (o == 1)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabFace"), new Vector3(-7f, 1.5f, 1), Quaternion.identity);
+                    GameObject wizardEnnemy = PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabFace"), new Vector3(-7f, 1.5f, 1), Quaternion.identity);
+                    PV = wizardEnnemy.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        wizardEnnemy.SetActive(false);
+                    }
                     o++;
                 }
                 else if (o == 2)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabFace"), new Vector3(-6, 2, 1), Quaternion.identity);
+                    GameObject wizardEnnemy = PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabFace"), new Vector3(-6, 2, 1), Quaternion.identity);
+                    PV = wizardEnnemy.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        wizardEnnemy.SetActive(false);
+                    }
                     o++;
                 }
                 else if (o == 3)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabFace"), new Vector3(-5f, 2.5f, 1), Quaternion.identity);
+                    GameObject wizardEnnemy = PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabFace"), new Vector3(-5f, 2.5f, 1), Quaternion.identity);
+                    PV = wizardEnnemy.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        wizardEnnemy.SetActive(false);
+                    }
                     o++;
                 }
             }
@@ -103,17 +126,41 @@ public class ScreenSelection : MonoBehaviourPun
             {
                 if (o == 1)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabBack"), new Vector3(5.5f, 0.25f, 1), Quaternion.identity);
+                    GameObject warriorAlly = PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabBack"), new Vector3(5.5f, 0.25f, 1), Quaternion.identity);
+                    PV = warriorAlly.GetComponent<PhotonView>();
+                    if (!PV.IsMine)
+                    {
+                        warriorAlly.SetActive(false);
+                    }   
+                    else if (PV.IsMine)
+                    {
+                        warriorAlly.SetActive(true);
+                    }
                     o++;
                 }
                 else if (o == 2)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabBack"), new Vector3(6.5f, 0.75f, 1), Quaternion.identity);
+                    GameObject warriorAlly = PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabBack"), new Vector3(6.5f, 0.75f, 1), Quaternion.identity);
+                    PV = warriorAlly.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        warriorAlly.SetActive(false);
+
+                    }
+
                     o++;
                 }
                 else if (o == 3)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabBack"), new Vector3(7.5f, 1.25f, 1), Quaternion.identity);
+                    GameObject warriorAlly = PhotonNetwork.Instantiate(Path.Combine("Prefab", "warriorPrefabBack"), new Vector3(7.5f, 1.25f, 1), Quaternion.identity);
+                    PV = warriorAlly.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        warriorAlly.SetActive(false);
+
+                    }
+
+                    
                     o++;
                 }
 
@@ -122,17 +169,36 @@ public class ScreenSelection : MonoBehaviourPun
             {
                 if (o == 1)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabBack"), new Vector3(5.5f, 0.25f, 1), Quaternion.identity);
+                    GameObject wizardAlly = PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabBack"), new Vector3(5.5f, 0.25f, 1), Quaternion.identity);
+                    PV = wizardAlly.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        wizardAlly.SetActive(false);
+
+                    }
+
                     o++;
                 }
                 else if (o == 2)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabBack"), new Vector3(6.5f, 0.75f, 1), Quaternion.identity);
+                    GameObject wizardAlly = PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabBack"), new Vector3(6.5f, 0.75f, 1), Quaternion.identity);
+                    PV = wizardAlly.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        wizardAlly.SetActive(false);
+                    }
                     o++;
                 }
                 else if (o == 3)
                 {
-                    PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabBack"), new Vector3(7.5f, 1.25f, 1), Quaternion.identity);
+                    GameObject wizardAlly = PhotonNetwork.Instantiate(Path.Combine("Prefab", "wizardPrefabBack"), new Vector3(7.5f, 1.25f, 1), Quaternion.identity);
+                    PV = wizardAlly.GetComponent<PhotonView>();
+                    if (PV.IsMine)
+                    {
+                        wizardAlly.SetActive(false);
+                    }
+                    
+                    
                     o++;
                 }
             }
